@@ -1,5 +1,3 @@
-﻿<p align="center"><img src="Logos/Training-Mode-banner.png"  alt=""  width="300"/></p>
-
 # Melee Bounding Boxes
 
 > **AI disclaimer**
