@@ -305,6 +305,8 @@ void Events_SetEventAsPlayed(int event_id);
 void Test_Think(GOBJ *gobj);
 void Hazards_Disable(void);
 void TM_CreateWatermark(void);
+void BBox_Init(void);
+void BBox_GX(GOBJ *gobj, int pass);
 
 // GX Link args
 #define GXLINK_MENUMODEL 12

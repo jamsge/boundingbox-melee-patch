@@ -1476,6 +1476,7 @@ void OnStartMelee(void)
 {
     Message_Init();
     Tip_Init();
+    BBox_Init();
 }
 
 ///////////////////////////////
