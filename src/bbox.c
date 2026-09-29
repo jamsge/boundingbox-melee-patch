@@ -1,4 +1,4 @@
-#include "events.h"
+#include "../MexTK/mex.h"
 
 // Draws a screen-space axis-aligned bounding box around every fighter.
 //
@@ -10,6 +10,25 @@
 // mapping normalized device coordinates straight to the screen) that renders
 // after the world and the HUD, with depth testing disabled. This makes the
 // boxes true screen-space rectangles that sit on top of everything.
+
+// GFX helpers (training mode normally exposes these through event_vars)
+typedef struct GFX_Params
+{
+    u8 shape; // GX_TRIANGLES, GX_LINES, etc.
+    u8 size;  // width of lines and points
+} GFX_Params;
+
+// EXPECTS PREMULTIPLIED COLORS
+static inline void GFX_AddVtx(f32 x, f32 y, f32 z, GXColor color)
+{
+    gx_pipe->d.F32 = x;
+    gx_pipe->d.F32 = y;
+    gx_pipe->d.F32 = z;
+    gx_pipe->d.U8 = color.r;
+    gx_pipe->d.U8 = color.g;
+    gx_pipe->d.U8 = color.b;
+    gx_pipe->d.U8 = color.a;
+}
 
 // GX link rendered only by our overlay camera (must not clash with other links)
 #define BBOX_GXLINK_OVERLAY 19
@@ -36,10 +55,10 @@ typedef struct BBoxScreen
 } BBoxScreen;
 
 static GXColor stc_bbox_colors[4] = {
-    {255, 0, 255, 255}, // P1 magenta
-    {0, 255, 255, 255}, // P2 cyan
-    {255, 255, 0, 255}, // P3 yellow
-    {0, 255, 0, 255},   // P4 green
+    {255, 0, 255, 255},   // P1 magenta
+    {255, 255, 0, 255},   // P2 yellow
+    {255, 140, 0, 255},   // P3 orange
+    {255, 0, 0, 255},     // P4 red
 };
 
 static COBJ *stc_overlay_cobj;

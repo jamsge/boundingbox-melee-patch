@@ -1,5 +1,24 @@
 ﻿<p align="center"><img src="Logos/Training-Mode-banner.png"  alt=""  width="300"/></p>
 
+# Melee Bounding Boxes
+
+> **AI disclaimer**
+>
+> This project — the bounding-box modification, the stripped build tooling, and
+> the changes layered on top of Training Mode - Community Edition — was created
+> with the assistance of AI (an automated coding agent). It has **not** been
+> reviewed or tested to the standard of the upstream project and may contain
+> bugs or incorrect assumptions. Use at your own risk.
+>
+> The upstream [Training Mode - Community Edition](https://github.com/AlexanderHarrison/TrainingMode-CommunityEdition)
+> project is human-authored; this disclaimer applies only to the modifications
+> made here.
+
+Melee Bounding Boxes is a minimal, near-vanilla Super Smash Bros. Melee build
+that draws a screen-space bounding box around every fighter (one colour per
+port) for image-classification / dataset capture. It is built on top of the
+Training Mode - Community Edition toolchain (m-ex DLL loader and build scripts).
+
 # Training Mode - Community Edition
 
 Training Mode - Community Edition is an expanded and updated version of UnclePunch's training modpack for Super Smash Bros. Melee.
